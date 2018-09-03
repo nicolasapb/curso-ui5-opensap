@@ -11,9 +11,12 @@
 		<pages>
 			<Page title="{i18n>appTitle}">
 				<content>
-					<IconTabBar id="idTopLevelIconTabBar" class="sapUiResponsiveContentPadding">
+					<IconTabBar
+            id="idTopLevelIconTabBar"
+            class="sapUiResponsiveContentPadding"
+            selectedKey="db">
 						<items>
-							<IconTabFilter id="start" text="{i18n>gettingStartedFilter}">
+							<IconTabFilter key="start" id="start" text="{i18n>gettingStartedFilter}">
 								<Carousel
                   class="sapUiContentPadding myAppCrsl"
                     loop="true">
@@ -29,7 +32,7 @@
                   valueLiveUpdate="true"
 								  width="60%" />
 							</IconTabFilter>
-							<IconTabFilter id="layouts" text="{i18n>layoutFilter}">
+							<IconTabFilter key="layouts" id="layouts" text="{i18n>layoutFilter}">
 								<MessageStrip
                   type="Information"
                   text="{i18n>messageStripText}"
@@ -89,6 +92,20 @@
 									</Button>
 								</Toolbar>
 							</IconTabFilter>
+              <IconTabFilter key="db" id="db" text="{i18n>dataBindingFilter}">
+                <content>
+                  <List
+                    headerText="{i18n>productListTitle}"
+						        items="{/ProductSet}">
+                    <items>
+                      <ObjectListItem
+                        title="{Name}"
+                        number="{Price}"
+                        intro="{ProductID}" />
+                    </items>
+                  </List>
+                </content>
+              </IconTabFilter>
 						</items>
 					</IconTabBar>
 				</content>

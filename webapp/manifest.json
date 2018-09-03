@@ -10,7 +10,7 @@
 			"version": "1.0.0"
 		},
 		"dataSources": {
-			"Sapes5.svc": {
+			"sapes5": {
 				"uri": "/sapes5/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
 				"type": "OData",
 				"settings": {
@@ -58,14 +58,14 @@
 					"bundleName": "opensap.myapp.i18n.i18n"
 				}
 			},
-			"sapes5": {
+			"": {
 				"settings": {
 					"tokenHandling": false,
 					"defaultOperationMode": "Server",
 					"defaultBindingMode": "OneWay",
 					"defaultCountMode": "Request"
 				},
-				"dataSource": "GWSAMPLE_BASIC",
+				"dataSource": "sapes5",
 				"preload": true
 			}
 		},
