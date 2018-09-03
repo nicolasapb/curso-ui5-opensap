@@ -13,7 +13,7 @@
 				<content>
 					<IconTabBar
             id="idTopLevelIconTabBar"
-            class="sapUiResponsiveContentPadding"
+            class="sapUiResponsiveContentPadding" 
             selectedKey="db">
 						<items>
 							<IconTabFilter key="start" id="start" text="{i18n>gettingStartedFilter}">
@@ -101,7 +101,8 @@
                       <ObjectListItem
                         title="{Name}"
                         number="{Price}"
-                        intro="{ProductID}" />
+                        intro="{ProductID}"
+                        numberUnit="{CurrencyCode}" />
                     </items>
                   </List>
                 </content>

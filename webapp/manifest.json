@@ -11,12 +11,14 @@
 		},
 		"dataSources": {
 			"sapes5": {
-				"uri": "/sapes5/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+				"uri": "https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
 				"type": "OData",
 				"settings": {
-					"odataVersion": "2.0",
+					"odataVersion": "2.0" ,
 					"localUri": "localService/metadata.xml"
-				}
+				},
+				"user": "P1941906127",
+				"password": "nicolas1"
 			}
 		}
 	},
@@ -58,15 +60,10 @@
 					"bundleName": "opensap.myapp.i18n.i18n"
 				}
 			},
-			"": {
-				"settings": {
-					"tokenHandling": false,
-					"defaultOperationMode": "Server",
-					"defaultBindingMode": "OneWay",
-					"defaultCountMode": "Request"
-				},
+			"": { 
 				"dataSource": "sapes5",
-				"preload": true
+				"preload": true,
+				"uri": "https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/"
 			}
 		},
 		"contentDensities": {

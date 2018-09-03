@@ -21,12 +21,12 @@
         "description": "SAPUI5 Test Resources"
       },
       {
-        "path": "/sapes5",
+        "path": "https://sapes5.sapdevcenter.com/",
         "target": {
           "type": "destination",
           "name": "sapes5"
         },
-        "description": "SAPes5 OData Service"
+        "description": "ES5 OData Service"
       }
     ]
   }
