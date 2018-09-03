@@ -99,10 +99,24 @@
 						        items="{/ProductSet}">
                     <items>
                       <ObjectListItem
+				                type="Active"
                         title="{Name}"
-                        number="{Price}"
+                        number="{
+                          parts:[{path:'Price'},{path:'CurrencyCode'}],
+                          type: 'sap.ui.model.type.Currency',
+                          formatOptions: {showMeasure: false}
+                        }"
                         intro="{ProductID}"
-                        numberUnit="{CurrencyCode}" />
+                        numberUnit="{CurrencyCode}" 
+                        numberState="{= ${Price} > 500 ? 'Error' : 'Success'}">
+                          <firstStatus >
+                            <ObjectStatus
+                              text="{
+                                parts:[{path:'Weight'},{path:'WeightMeasure'}],
+                                formatter: '.formatter.delivery'
+                              }"/>
+                          </firstStatus>
+				                </ObjectListItem>
                     </items>
                   </List>
                 </content>

@@ -1,10 +1,13 @@
 sap.ui.define([
     "sap/ui/core/mvc/Controller",
-    "sap/m/MessageToast"
-], function(Controller, MessageToast) {
+    "sap/m/MessageToast",
+    "./Formatter"
+], function(Controller, MessageToast, Formatter) {
     'use strict';
 
     Controller.extend("opensap.myapp.controller.App", {
+
+        formatter: Formatter,
 
         onShowHello: function() {
 
