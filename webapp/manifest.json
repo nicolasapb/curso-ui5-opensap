@@ -1,0 +1,77 @@
+{
+	"_version": "1.8.0",
+	"sap.app": {
+		"id": "opensap.myapp",
+		"type": "application",
+		"title": "{{appTitle}}",
+		"i18n": "i18n/i18n.properties",
+		"description": "{{appDescription}}",
+		"applicationVersion": {
+			"version": "1.0.0"
+		},
+		"dataSources": {
+			"Sapes5.svc": {
+				"uri": "/sapes5/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+				"type": "OData",
+				"settings": {
+					"odataVersion": "2.0",
+					"localUri": "localService/metadata.xml"
+				}
+			}
+		}
+	},
+	"sap.ui": {
+		"technology": "UI5",
+		"deviceTypes": {
+			"desktop": true,
+			"tablet": true,
+			"phone": true
+		}
+	},
+	"sap.ui5": {
+		"rootView": {
+			"viewName": "opensap.myapp.view.App",
+			"type": "XML",
+			"async": true,
+			"id": "app"
+		},
+		"autoPrefixId": true,
+		"dependencies": {
+			"libs": {
+				"sap.ui.core": {},
+				"sap.m": {},
+				"sap.ui.layout": {}
+			}
+		},
+		"models": {
+			"helloPanel": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/HelloPanel.json"
+			},
+			"address": {
+				"type": "sap.ui.model.json.JSONModel",
+				"uri": "model/Address.json"
+			},
+			"i18n": {
+				"type": "sap.ui.model.resource.ResourceModel",
+				"settings": {
+					"bundleName": "opensap.myapp.i18n.i18n"
+				}
+			},
+			"sapes5": {
+				"settings": {
+					"tokenHandling": false,
+					"defaultOperationMode": "Server",
+					"defaultBindingMode": "OneWay",
+					"defaultCountMode": "Request"
+				},
+				"dataSource": "GWSAMPLE_BASIC",
+				"preload": true
+			}
+		},
+		"contentDensities": {
+			"compact": true,
+			"cozy": true
+		}
+	}
+}
