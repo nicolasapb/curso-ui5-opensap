@@ -9,7 +9,7 @@ sap.ui.define([
 
         formatter: Formatter,
 
-        onShowHello: function() {
+        onShowHello: function() { 
 
             var oView = this.getView();
             var oBundle = oView.getModel('i18n').getResourceBundle();

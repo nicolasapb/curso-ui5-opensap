@@ -37,6 +37,7 @@
 			"async": true,
 			"id": "app"
 		},
+		"handleValidation": true,
 		"autoPrefixId": true,
 		"dependencies": {
 			"libs": {
