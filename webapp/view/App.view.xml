@@ -111,6 +111,9 @@
                         descending: false,
                         group: true
                       },
+                      parameters: {
+                        expand: 'ToSupplier'
+                      },
                       groupHeaderFactory: '.getGroupHeader'
                     }"
 		                growing="true"
@@ -144,10 +147,15 @@
                           <firstStatus >
                             <ObjectStatus
                               text="{
-                                parts:[{path:'Weight'},{path:'WeightMeasure'}],
+                                parts:[{path:'WeightUnit'},{path:'WeightMeasure'}],
                                 formatter: '.formatter.delivery'
                               }"/>
                           </firstStatus>
+                          <secondStatus>
+                            <ObjectStatus
+                              title="{i18n>deliverdFrom}"
+                              text="{ToSupplier/Address/City}"/>
+                          </secondStatus>
 				                </ObjectListItem>
                     </items>
                   </List>
@@ -160,7 +168,8 @@
                       <Text text="{i18n>productID}: {ProductID}"/>
                       <Text text="{i18n>productName}: {Name}"/>
                       <Text text="{i18n>productDescription}: {Description}"/>
-                      <Text text="{i18n>productPrice}: {Price}"/>
+                      <Text text="{i18n>productPrice}: {Price} {CurrencyCode}"/>
+                      <Text text="{i18n>productWeight}: {WeightMeasure} {WeightUnit}"/>
                     </l:Grid>
                   </Panel>
                 </content>

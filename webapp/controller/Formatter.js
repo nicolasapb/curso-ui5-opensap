@@ -11,12 +11,17 @@ sap.ui.define([], function () {
 			}
 			if (iWeight < 0.5) {
 				sResult = oResourceBundle.getText("formatterMailDelivery");
-			} else if (iWeight < 5) {
+			} else if (iWeight < 10) {
 				sResult = oResourceBundle.getText("formatterParcelDelivery");
 			} else {
 				sResult = oResourceBundle.getText("formatterCarrierDelivery");
 			}
 
+			return sResult;
+		},
+
+		price: function(price, currency) {
+			var sResult = "";
 			return sResult;
 		}
 	};
