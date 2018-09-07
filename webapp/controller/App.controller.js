@@ -40,6 +40,17 @@ sap.ui.define([
             var oList = this.byId("invoiceList");
             var oItems = oList.getBinding("items");
             oItems.filter(aFilters, "Application");
+        },
+
+        onItemSelected: function(oEvent) {
+
+            var oItemContextPath = oEvent.getParameter("listItem")
+                                     .getBindingContextPath();
+            console.log(oItemContextPath);
+
+            var oProductDetailPanel = this.byId('productDetailsPanel');
+            oProductDetailPanel.bindElement({path: oItemContextPath});
+            oProductDetailPanel.setVisible(true);
         }
     });
 });

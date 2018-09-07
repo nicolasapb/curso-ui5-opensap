@@ -112,7 +112,16 @@
                         group: true
                       },
                       groupHeaderFactory: '.getGroupHeader'
-                    }">
+                    }"
+		                growing="true"
+                    growingThreshold="5"
+                    growingScrollToLoad="false"
+                    busyIndicatorDelay="200"
+                    enableBusyIndicator="true"
+                    growingTriggerText="{i18n>productListMore}"
+                    noDataText="{i18n>productListNoDataText}"
+                    mode="SingleSelectMaster"
+                    selectionChange="onItemSelected">
                     <headerToolbar>
                       <Toolbar>
                         <Title text="{i18n>productListTitle}"/>
@@ -142,6 +151,18 @@
 				                </ObjectListItem>
                     </items>
                   </List>
+                  <Panel
+                    id="productDetailsPanel"
+                    headerText="{i18n>productDetailsPanelHeader}"
+                    visible="false">
+                    <l:Grid
+                      defaultSpan="XL6 L6 M6 S12">
+                      <Text text="{i18n>productID}: {ProductID}"/>
+                      <Text text="{i18n>productName}: {Name}"/>
+                      <Text text="{i18n>productDescription}: {Description}"/>
+                      <Text text="{i18n>productPrice}: {Price}"/>
+                    </l:Grid>
+                  </Panel>
                 </content>
               </IconTabFilter>
 						</items>
