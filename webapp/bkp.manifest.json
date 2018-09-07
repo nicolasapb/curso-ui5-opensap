@@ -11,7 +11,7 @@
 		},
 		"dataSources": {
 			"sapes5": {
-				"uri": "/sapes5/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
+				"uri": "https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/",
 				"type": "OData",
 				"settings": {
 					"odataVersion": "2.0" ,
@@ -61,10 +61,10 @@
 					"bundleName": "opensap.myapp.i18n.i18n"
 				}
 			},
-			"": {
+			"": { 
 				"dataSource": "sapes5",
 				"preload": true,
-				"uri": "/sapes5/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/"
+				"uri": "https://sapes5.sapdevcenter.com/sap/opu/odata/IWBEP/GWSAMPLE_BASIC/"
 			}
 		},
 		"contentDensities": {

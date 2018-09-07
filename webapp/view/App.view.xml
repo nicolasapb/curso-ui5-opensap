@@ -13,7 +13,7 @@
 				<content>
 					<IconTabBar
             id="idTopLevelIconTabBar"
-            class="sapUiResponsiveContentPadding" 
+            class="sapUiResponsiveContentPadding"
             selectedKey="db">
 						<items>
 							<IconTabFilter key="start" id="start" text="{i18n>gettingStartedFilter}">
@@ -37,7 +37,7 @@
                       maximum: 3000
                     }
                   }"
-                  description="Hello {helloPanel>/recipient/name}" 
+                  description="Hello {helloPanel>/recipient/name}"
 								  width="60%" />
 							</IconTabFilter>
 							<IconTabFilter key="layouts" id="layouts" text="{i18n>layoutFilter}">
@@ -103,8 +103,23 @@
               <IconTabFilter key="db" id="db" text="{i18n>dataBindingFilter}">
                 <content>
                   <List
-                    headerText="{i18n>productListTitle}"
-						        items="{/ProductSet}">
+                    id="invoiceList"
+						        items="{
+                      path: '/ProductSet',
+                      sorter: {
+                        path: 'Category',
+                        descending: false,
+                        group: true
+                      },
+                      groupHeaderFactory: '.getGroupHeader'
+                    }">
+                    <headerToolbar>
+                      <Toolbar>
+                        <Title text="{i18n>productListTitle}"/>
+                        <ToolbarSpacer/>
+                        <SearchField width="50%" liveChange="onFilterProducts"/>
+                      </Toolbar>
+                    </headerToolbar>
                     <items>
                       <ObjectListItem
 				                type="Active"
@@ -115,7 +130,7 @@
                           formatOptions: {showMeasure: false}
                         }"
                         intro="{ProductID}"
-                        numberUnit="{CurrencyCode}" 
+                        numberUnit="{CurrencyCode}"
                         numberState="{= ${Price} > 500 ? 'Error' : 'Success'}">
                           <firstStatus >
                             <ObjectStatus
